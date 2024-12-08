@@ -145,7 +145,7 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  *     0     => 0
  */
 function getLastDigit(value) {
-  return Number(String(value).slice(-1));
+  return Math.abs(value) % 10;
 }
 
 /**
@@ -501,7 +501,7 @@ function isInteger(number) {
  * 'abcdefgh'      => NaN
  */
 function getFloatOnString(string) {
-  return Number.parseFloat(string);
+  return parseFloat(string);
 }
 
 /**
@@ -657,7 +657,9 @@ function getRandomInteger(min, max) {
  * 3, 4 => 5
  */
 function getHypotenuse(a, b) {
-  const c = Math.sqrt(a ** 2 + b ** 2);
+  const a2 = a ** 2;
+  const b2 = b ** 2;
+  const c = Math.sqrt(a2 + b2);
   if (c > Number.MAX_VALUE) {
     return Number.MAX_VALUE;
   }
@@ -678,10 +680,10 @@ function getHypotenuse(a, b) {
  * 15 => 8
  */
 function getCountOfOddNumbers(number) {
-  if (number <= 0) {
+  if (number < 0) {
     return 0;
   }
-  return Math.floor((number + 1) / 2);
+  return Math.floor(number / 2) + (number % 2);
 }
 
 module.exports = {
