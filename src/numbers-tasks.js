@@ -1,5 +1,3 @@
-/* eslint-disable no-labels */
-/* eslint-disable no-restricted-syntax */
 /* *******************************************************************************************
  *                                                                                           *
  * Please read the following tutorial before implementing tasks:                              *
